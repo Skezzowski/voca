@@ -1,18 +1,33 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+import { AppComponent } from './app.component';
+import { NavigationComponent } from './navigation/navigation.component';
+import { NewVocaComponent } from './new-voca/new-voca.component';
+import { PracticeComponent } from './practice/practice.component';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { MaterialModule } from './material.module';
+
+import { FileService } from './services/file.service';
+import { WordPairTableComponent } from './widgets/word-pair-table/word-pair-table.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavigationComponent,
+    NewVocaComponent,
+    PracticeComponent,
+    WordPairTableComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MaterialModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [FileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
