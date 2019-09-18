@@ -11,7 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './material.module';
 
 import { FileService } from './services/file.service';
-import { WordPairTableComponent } from './widgets/word-pair-table/word-pair-table.component';
+import { TabContentComponent } from './widgets/tab-content/tab-content.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,7 @@ import { WordPairTableComponent } from './widgets/word-pair-table/word-pair-tabl
     NavigationComponent,
     NewVocaComponent,
     PracticeComponent,
-    WordPairTableComponent
+    TabContentComponent
   ],
   imports: [
     BrowserModule,

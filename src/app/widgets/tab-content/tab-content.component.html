@@ -1,28 +1,30 @@
 <div class="newWordContainer">
-  <input #lang1 matInput required placeholder="Language 1">
+  <input #lang1 matInput required placeholder="Language 1" >
   <input #lang2 matInput required placeholder="Language 2">
-  <button>Add</button>
-  <!-- <button (click)="addWordPair(voca.name, lang1.value, lang2.value)">Add</button> -->
+  <button mat-stroked-button color="primary" (click)="addWordPair(lang1.value, lang2.value); lang1.value=''; lang2.value=''">Add</button>
 </div>
 
 <div class="table-container">
-
-  <table mat-table [dataSource]="wordPairs" class="mat-elevation-z8 vocaTable">
+  <table mat-table [dataSource]="vocabulary.data" class="mat-elevation-z8 vocaTable">
     <ng-container matColumnDef="language1">
       <th mat-header-cell *matHeaderCellDef> Language 1 </th>
       <td mat-cell *matCellDef="let element">
-        <input matInput [(ngModel)]="element.language1" (blur)="changeValue()">
+        <input matInput [(ngModel)]="element.language1" (blur)="changeWordPair()">
       </td>
     </ng-container>
 
     <ng-container matColumnDef="language2">
       <th mat-header-cell *matHeaderCellDef> Language 2 </th>
       <td mat-cell *matCellDef="let element">
-        <input matInput [(ngModel)]="element.language2" (blur)="changeValue()">
+        <input matInput [(ngModel)]="element.language2" (blur)="changeWordPair()">
       </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+</div>
+
+<div style="margin: 25pt 25pt 25pt auto;">
+  <button mat-stroked-button color="warn" (click)="deleteVocabulary()">Delete Vocabulary</button>
 </div>

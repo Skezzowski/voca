@@ -11,5 +11,12 @@
 
   
 .newWordContainer {
-    width: 10%
+    width: 10%;
+    margin: 25pt 25pt 25pt auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .newWordContainer * {
+    margin: 5pt;
   }

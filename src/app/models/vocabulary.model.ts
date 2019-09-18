@@ -1,4 +1,5 @@
 export interface  Vocabulary {
+    id: string;
     name: string;
     data: VocabularyPair[];
 }

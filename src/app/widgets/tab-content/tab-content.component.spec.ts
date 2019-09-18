@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WordPairTableComponent } from './word-pair-table.component';
+import { TabContentComponent } from './tab-content.component';
 
 describe('WordPairTableComponent', () => {
-  let component: WordPairTableComponent;
-  let fixture: ComponentFixture<WordPairTableComponent>;
+  let component: TabContentComponent;
+  let fixture: ComponentFixture<TabContentComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WordPairTableComponent ]
+      declarations: [ TabContentComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WordPairTableComponent);
+    fixture = TestBed.createComponent(TabContentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

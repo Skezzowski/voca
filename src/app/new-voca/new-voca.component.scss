@@ -1,6 +1,11 @@
-app-word-pair-table {
+app-tab-content {
   display: flex;
   align-items: flex-start;
   overflow: hidden;
 }
 
+md-tab-group {
+  .mat-tab-body-wrapper {
+    height: 100%;
+  }
+}

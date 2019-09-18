@@ -2,11 +2,11 @@
   <mat-form-field>
     <input #newVoca matInput placeholder="New vocabulary name">
   </mat-form-field>
-  <button (click)="addVocabulary(newVoca.value); newVoca.value = ''">Add</button>
+  <button mat-stroked-button color="primary" (click)="addVocabulary(newVoca.value); newVoca.value=''" style="margin: 5pt">Add</button>
 </div>
 
 <mat-tab-group style="height: 100%; width: 100%">
   <mat-tab *ngFor="let voca of vocabularies" [label]="voca.name" style="height: 100%; width: 100%">
-    <app-word-pair-table [wordPairs]="voca.data"></app-word-pair-table>
+    <app-tab-content [vocabulary]="voca" (onVocaChange)="vocaChange($event)" (onVocaDelete)="deleteVocabulary($event)"></app-tab-content>
   </mat-tab>
 </mat-tab-group>
