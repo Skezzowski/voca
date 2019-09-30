@@ -20,7 +20,7 @@ export class TabContentComponent {
   constructor() { }
 
 
-  changeWordPair(event) {
+  changeWordPair() {
     this.onVocaChange.emit(this.vocabulary);
   }
 

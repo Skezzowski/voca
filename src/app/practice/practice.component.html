@@ -1,1 +1,23 @@
-<p>practice works!</p>
+<div class="practice-container">
+    <div class="settings">
+          <mat-form-field>
+              <select #select matNativeControl required>
+                <option  *ngFor="let voca of vocabularies" [value]="voca.id">
+                    {{voca.name}}
+                </option>
+                <option value="all">All</option>
+              </select>
+            </mat-form-field>
+            <button mat-button (click)="onPracticeStart(select.value)">Go</button>
+    </div>
+    <div class="practice-area" *ngIf="questionsStarted">
+        <div class="question text">What is the meaning of {{questionWord}}?</div>
+        <mat-form-field>
+            <input #answer matInput>
+          </mat-form-field>
+        <button mat-button [disabled]="!answer.value" (click)="checkAnswer(answer.value)">Check</button>
+        <div class="result">{{result}}</div>
+        <button mat-button  (click)="askNewWorld(); answer.value=''">Next</button>
+    </div>
+
+</div>

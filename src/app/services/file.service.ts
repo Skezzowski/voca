@@ -3,7 +3,7 @@ import * as _ from 'rxjs';
 import { Vocabulary } from '../models/vocabulary.model';
 
 
-const FILE_PATH = './data/vocabularies.json';
+const FILE_PATH = './vocabularies.json';
 
 @Injectable({
   providedIn: 'root'
@@ -14,9 +14,9 @@ export class FileService {
   constructor() {
     this.fs = (window as any).fs;
   }
-
+  
   get vocabularies(): Vocabulary[] {
-    return JSON.parse(this.fs.readFileSync(FILE_PATH, 'utf8'));
+      return JSON.parse(this.fs.readFileSync(FILE_PATH, 'utf8'));
   }
 
   writeFile(data: Vocabulary[]) {

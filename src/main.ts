@@ -9,5 +9,8 @@ if (environment.production) {
   enableProdMode();
 }
 
+const fs = (window as any).fs;
+fs.closeSync(fs.openSync('./vocabularies.json', 'a'))
+
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
