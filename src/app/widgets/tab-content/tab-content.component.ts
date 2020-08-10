@@ -11,26 +11,25 @@ import { MatTable } from '@angular/material';
 export class TabContentComponent {
 
   @Input() vocabulary: Vocabulary;
-  @Output() onVocaChange = new EventEmitter<Vocabulary>();
-  @Output() onVocaDelete = new EventEmitter<string>();
+  @Output() VocaChange = new EventEmitter<Vocabulary>();
+  @Output() VocaDelete = new EventEmitter<string>();
 
   displayedColumns = ['language1', 'language2'];
   @ViewChild(MatTable, { static: false }) table: MatTable<any>;
 
   constructor() { }
 
-
   changeWordPair() {
-    this.onVocaChange.emit(this.vocabulary);
+    this.VocaChange.emit(this.vocabulary);
   }
 
   deleteVocabulary() {
-    this.onVocaDelete.emit(this.vocabulary.id);
+    this.VocaDelete.emit(this.vocabulary.id);
   }
 
   addWordPair(lang1, lang2) {
     this.vocabulary.data.push({ language1: lang1, language2: lang2 });
-    this.onVocaChange.emit(this.vocabulary);
+    this.VocaChange.emit(this.vocabulary);
     this.table.renderRows();
   }
 

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NewVocaComponent } from './new-voca.component';
+import { VocaEditorComponent } from './voca-editor.component';
 
 describe('NewVocaComponent', () => {
-  let component: NewVocaComponent;
-  let fixture: ComponentFixture<NewVocaComponent>;
+  let component: VocaEditorComponent;
+  let fixture: ComponentFixture<VocaEditorComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NewVocaComponent ]
+      declarations: [ VocaEditorComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NewVocaComponent);
+    fixture = TestBed.createComponent(VocaEditorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

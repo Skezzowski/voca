@@ -3,21 +3,21 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { NavigationComponent } from './navigation/navigation.component';
-import { NewVocaComponent } from './new-voca/new-voca.component';
+import { VocaEditorComponent } from './voca-editor/voca-editor.component';
 import { PracticeComponent } from './practice/practice.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './material.module';
 
-import { FileService } from './services/file.service';
+import { VocabularyService } from './services/vocabulary.service';
 import { TabContentComponent } from './widgets/tab-content/tab-content.component';
+import { NavigationComponent } from './widgets/side-navigation/navigation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
-    NewVocaComponent,
+    VocaEditorComponent,
     PracticeComponent,
     TabContentComponent
   ],
@@ -27,7 +27,7 @@ import { TabContentComponent } from './widgets/tab-content/tab-content.component
     MaterialModule,
     FormsModule
   ],
-  providers: [FileService],
+  providers: [VocabularyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
